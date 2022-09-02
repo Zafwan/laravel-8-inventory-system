@@ -152,4 +152,37 @@ class ItemController extends Controller
 
         return redirect('/items')->with('success', 'Item has been successfully deleted');
     }
+
+    // Search feature view
+    public function searchView() {
+        $itemCategory = ItemCategory::all();
+        $selectedID = null;
+
+        return view('warehouse.items.search', compact('itemCategory','selectedID'));
+    }
+
+    // Search feature
+    public function search(Request $request)
+    {
+        $itemCategory = ItemCategory::all();
+        $selectedID = null;
+
+        // $data = \DB::table('items');
+        $data = Item::with('itemCategories');
+
+        if( $request->name){
+            $data = $data->where('name', 'LIKE', "%" . $request->name . "%");
+        }
+
+        if( $request->sku){
+            $data = $data->where('sku', 'LIKE', "%" . $request->sku . "%");
+        }
+
+        if( $request->item_categories_id){
+            $data = $data->where('item_categories_id','=',$request->item_categories_id);
+        }
+
+        $data = $data->paginate(5);
+        return view('warehouse.items.search-results', compact('data','itemCategory','selectedID'));
+    }
 }

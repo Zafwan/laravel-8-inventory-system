@@ -43,7 +43,7 @@
                             Warehouse
                           </a>
                           <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Search</a></li>
+                            <li><a class="dropdown-item" href="{{ route('item-search-view') }}">Search</a></li>
                             <li><a class="dropdown-item" href="{{ route('items.index') }}">All Items</a></li>
                             <li><a class="dropdown-item" href="{{ route('item-categories.index') }}">Item Category</a></li>
                           </ul>
