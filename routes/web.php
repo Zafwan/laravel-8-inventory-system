@@ -20,5 +20,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Item controller
 Route::resource('items', 'App\Http\Controllers\Warehouse\ItemController');
+
+// Item Category controller
 Route::resource('item-categories', 'App\Http\Controllers\Warehouse\ItemCategoryController');
+
+// Item Search controller
+Route::get('/item-search-view', 'App\Http\Controllers\Warehouse\ItemController@searchView')->name('item-search-view');
+Route::get('/item-search', 'App\Http\Controllers\Warehouse\ItemController@search')->name('item-search');
+
