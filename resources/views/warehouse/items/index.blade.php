@@ -23,6 +23,7 @@
                           <th scope="col">Name</th>
                           <th scope="col">SKU</th>
                           <th scope="col">Quantity</th>
+                          <th scope="col">Category</th>
                           <th scope="col">Image</th>
                           <th scope="col">Action</th>
                         </tr>
@@ -34,6 +35,7 @@
                               <td>{{ $item->name }}</td>
                               <td>{{ $item->sku }}</td>
                               <td>{{ $item->quantity }}</td>
+                              <td>{{ $item->itemCategories->name }}</td>
                               <td><img id="myImg" class="img-thumbnail" width="50" src="{{ asset('storage/' . $item->image) }}"></td>
                               <td>
                                     <form action="{{ route('items.destroy', $item->id)}}" method="post">

@@ -10,4 +10,9 @@ class ItemCategory extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function item()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

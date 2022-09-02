@@ -26,7 +26,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = Item::latest()->paginate(5);
+        // $items = Item::latest()->paginate(5);
+        $items = Item::with('itemCategories')->latest()->paginate(5);
 
         return view('warehouse.items.index', compact('items'));
     }
