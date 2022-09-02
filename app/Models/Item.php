@@ -10,4 +10,9 @@ class Item extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function itemCategories()
+    {
+        return $this->belongsTo(ItemCategory::class);
+    }
 }
