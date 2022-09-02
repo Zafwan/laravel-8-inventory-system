@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
     <link rel="icon" type="image/x-icon" href="./img/fav.png">
 
     <!-- Scripts -->
@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     <div id="app">
@@ -43,8 +44,8 @@
                           </a>
                           <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Search</a></li>
-                            <li><a class="dropdown-item" href="#">All Items</a></li>
-                            <li><a class="dropdown-item" href="#">Item Category</a></li>
+                            <li><a class="dropdown-item" href="{{ route('items.index') }}">All Items</a></li>
+                            <li><a class="dropdown-item" href="{{ route('item-categories.index') }}">Item Category</a></li>
                           </ul>
                         </li>
                     </ul>
@@ -92,5 +93,7 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
