@@ -31,3 +31,6 @@ Route::resource('item-categories', 'App\Http\Controllers\Warehouse\ItemCategoryC
 Route::get('/item-search-view', 'App\Http\Controllers\Warehouse\ItemController@searchView')->name('item-search-view');
 Route::get('/item-search', 'App\Http\Controllers\Warehouse\ItemController@search')->name('item-search');
 
+// User Management
+Route::resource('user-managements', 'App\Http\Controllers\UserManagement\UserController');
+

@@ -48,6 +48,16 @@
                             <li><a class="dropdown-item" href="{{ route('item-categories.index') }}">Item Category</a></li>
                           </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Administration
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('user-managements.index') }}">User Management</a></li>
+                            <li><a class="dropdown-item" href="">Role Management</a></li>
+                            <li><a class="dropdown-item" href="">Audit Logs</a></li>
+                          </ul>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
